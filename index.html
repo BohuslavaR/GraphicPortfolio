@@ -1,561 +1,602 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="gold">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#F1CEAE">
-<title>Bohuslava Rozsypalová — Graphic Design Portfolio</title>
-<meta name="description" content="Graphic portfolio of Bohuslava Rozsypalová — playful ideas, color and craft across brand identity, packaging, print and illustration.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#D9C4A9">
+  <title data-i18n="meta.title">Bohuslava Rozsypalová — Graphic Design Portfolio</title>
+  <meta name="description" data-i18n-attr="content:meta.desc" content="Graphic portfolio of Bohuslava Rozsypalová — playful ideas, color and craft across brand identity, packaging, print and illustration.">
 
-<!-- Favicon -->
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%233E2F26'/%3E%3Ccircle cx='24' cy='24' r='11' fill='%23F1CEAE'/%3E%3Ccircle cx='42' cy='24' r='11' fill='%23D9AB94'/%3E%3Ccircle cx='33' cy='42' r='11' fill='%23CBD8C4'/%3E%3C/svg%3E">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%233F0D0C'/%3E%3Ccircle cx='24' cy='24' r='11' fill='%23D9B061'/%3E%3Ccircle cx='42' cy='24' r='11' fill='%23D9C4A9'/%3E%3Ccircle cx='33' cy='42' r='11' fill='%23EAD39C'/%3E%3C/svg%3E">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-<script src="script.js" defer></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <script src="i18n.js" defer></script>
+  <script src="script.js" defer></script>
 </head>
 <body>
 
   <!-- ============================================================
-       HLAVIČKA
+       HLAVIČKA — logo, menu, prepínač jazykov
        ============================================================ -->
   <header class="site-header">
     <a href="#hero" class="site-logo">Bohuslava R.</a>
-    <button class="nav-toggle" id="nav-toggle-btn" aria-label="Open menu" aria-expanded="false">☰</button>
-    <nav>
-      <ul id="nav-list">
-        <li><a href="#journey" data-nav="journey">My Work</a></li>
-        <li><a href="#journey-2" data-nav="journey-2">Process</a></li>
-        <li><a href="#gallery-explore" data-nav="gallery-explore">Gallery</a></li>
-        <li><a href="#services" data-nav="services">Services</a></li>
-        <li><a href="#wins" data-nav="wins">Favorites</a></li>
-        <li><a href="#contact" data-nav="contact">Contact</a></li>
-      </ul>
-    </nav>
+
+    <div class="header-actions">
+      <nav aria-label="Main navigation">
+        <ul id="nav-list">
+          <li><a href="#journey" data-i18n="nav.work">My Work</a></li>
+          <li><a href="#journey-2" data-i18n="nav.process">Process</a></li>
+          <li><a href="#gallery-explore" data-i18n="nav.gallery">Gallery</a></li>
+          <li><a href="#webs" data-i18n="nav.webs">Websites</a></li>
+          <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="lang-switch" role="group" aria-label="Language / Jazyk / Sprache">
+        <button class="lang-btn" data-lang="en" aria-pressed="true">EN</button>
+        <button class="lang-btn" data-lang="sk" aria-pressed="false">SK</button>
+        <button class="lang-btn" data-lang="de" aria-pressed="false">DE</button>
+      </div>
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" data-i18n-attr="aria-label:nav.open" aria-expanded="false">☰</button>
+    </div>
   </header>
 
   <!-- ============================================================
-       Theme switcher
+       PLÁVAJÚCE OVLÁDANIE — koleso tém, bočné menu, späť hore
        ============================================================ -->
-  <button class="wheel-button" id="wheel-button" aria-label="Spin for a new color look">
+  <button class="wheel-button" id="wheel-button" aria-label="Spin for a new color look" data-i18n-attr="aria-label:wheel.aria">
     <span class="wheel-pointer" aria-hidden="true"></span>
     <svg class="wheel-svg" id="wheel-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <path d="M50 50 L50 0 A50 50 0 0 1 89.09 18.83 Z" fill="#F1CEAE"/>
-      <path d="M50 50 L89.09 18.83 A50 50 0 0 1 98.75 61.13 Z" fill="#CBD8C4"/>
-      <path d="M50 50 L98.75 61.13 A50 50 0 0 1 71.69 95.04 Z" fill="#3E2F26"/>
-      <path d="M50 50 L71.69 95.04 A50 50 0 0 1 28.31 95.04 Z" fill="#FBF6E2"/>
-      <path d="M50 50 L28.31 95.04 A50 50 0 0 1 1.25 61.13 Z" fill="#D9AB94"/>
-      <path d="M50 50 L1.25 61.13 A50 50 0 0 1 10.91 18.83 Z" fill="#DBC1B4"/>
-      <path d="M50 50 L10.91 18.83 A50 50 0 0 1 50 0 Z" fill="#AB9274"/>
-      <circle cx="50" cy="50" r="9" fill="#3E2F26"/>
+      <path d="M50 50 L50 0 A50 50 0 0 1 85.36 14.64 Z" fill="#D9B061"/>
+      <path d="M50 50 L85.36 14.64 A50 50 0 0 1 100 50 Z" fill="#EAD39C"/>
+      <path d="M50 50 L100 50 A50 50 0 0 1 85.36 85.36 Z" fill="#3F0D0C"/>
+      <path d="M50 50 L85.36 85.36 A50 50 0 0 1 50 100 Z" fill="#F4EEE3"/>
+      <path d="M50 50 L50 100 A50 50 0 0 1 14.64 85.36 Z" fill="#A8743A"/>
+      <path d="M50 50 L14.64 85.36 A50 50 0 0 1 0 50 Z" fill="#D9C4A9"/>
+      <path d="M50 50 L0 50 A50 50 0 0 1 14.64 14.64 Z" fill="#8D6F57"/>
+      <path d="M50 50 L14.64 14.64 A50 50 0 0 1 50 0 Z" fill="#D8D0C5"/>
+      <circle cx="50" cy="50" r="9" fill="#3F0D0C"/>
     </svg>
   </button>
-  <p class="wheel-hint">spin for a new look</p>
+  <p class="wheel-hint" data-i18n="wheel.hint">spin for a new look</p>
 
-  <!-- ============================================================
-       SIDE MENU 
-       ============================================================ -->
   <nav class="side-nav" aria-label="Section navigation">
-    <button class="side-nav-dot" data-target="hero" data-label="Home"></button>
-    <button class="side-nav-dot" data-target="journey" data-label="Journey"></button>
-    <button class="side-nav-dot" data-target="mini-gallery-1" data-label="Materials"></button>
-    <button class="side-nav-dot" data-target="cup-design" data-label="Cup Design"></button>
-    <button class="side-nav-dot" data-target="motto" data-label="Motto"></button>
-    <button class="side-nav-dot" data-target="journey-2" data-label="Process"></button>
-    <button class="side-nav-dot" data-target="moodboard" data-label="Moodboard"></button>
-    <button class="side-nav-dot" data-target="mini-gallery-2" data-label="More Designs"></button>
-    <button class="side-nav-dot" data-target="services" data-label="Services"></button>
-    <button class="side-nav-dot" data-target="gallery-explore" data-label="Gallery"></button>
-    <button class="side-nav-dot" data-target="specimen" data-label="Type &amp; Color"></button>
-    <button class="side-nav-dot" data-target="wins" data-label="Favorites"></button>
-    <button class="side-nav-dot" data-target="contact" data-label="Contact"></button>
+    <button class="side-nav-dot" data-scroll-to="hero" data-label="Home" data-i18n-attr="data-label:side.home"></button>
+    <button class="side-nav-dot" data-scroll-to="showcase" data-label="Showcase" data-i18n-attr="data-label:side.showcase"></button>
+    <button class="side-nav-dot" data-scroll-to="journey" data-label="Product Designs" data-i18n-attr="data-label:side.journey"></button>
+    <button class="side-nav-dot" data-scroll-to="mini-gallery" data-label="Materials" data-i18n-attr="data-label:side.materials"></button>
+    <button class="side-nav-dot" data-scroll-to="cup-design" data-label="Cup Design" data-i18n-attr="data-label:side.cup"></button>
+    <button class="side-nav-dot" data-scroll-to="motto" data-label="Scratch &amp; Reveal" data-i18n-attr="data-label:side.motto"></button>
+    <button class="side-nav-dot" data-scroll-to="journey-2" data-label="Process" data-i18n-attr="data-label:side.process"></button>
+    <button class="side-nav-dot" data-scroll-to="moodboard" data-label="Moodboard" data-i18n-attr="data-label:side.moodboard"></button>
+    <button class="side-nav-dot" data-scroll-to="gallery-explore" data-label="Gallery" data-i18n-attr="data-label:side.gallery"></button>
+    <button class="side-nav-dot" data-scroll-to="displays" data-label="Every Display" data-i18n-attr="data-label:side.displays"></button>
+    <button class="side-nav-dot" data-scroll-to="print" data-label="Print" data-i18n-attr="data-label:side.print"></button>
+    <button class="side-nav-dot" data-scroll-to="landing" data-label="Landing Pages" data-i18n-attr="data-label:side.landing"></button>
+    <button class="side-nav-dot" data-scroll-to="webs" data-label="Websites" data-i18n-attr="data-label:side.webs"></button>
+    <button class="side-nav-dot" data-scroll-to="specimen" data-label="Type &amp; Color" data-i18n-attr="data-label:side.specimen"></button>
+    <button class="side-nav-dot" data-scroll-to="contact" data-label="Contact" data-i18n-attr="data-label:side.contact"></button>
   </nav>
 
-  <!-- ============================================================
-       SPÄŤ HORE 
-       ============================================================ -->
-  <button class="back-to-top" id="back-to-top" aria-label="Back to top">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 15l-6-6-6 6"/></svg>
+  <button class="back-to-top" data-scroll-to="hero" aria-label="Back to top" data-i18n-attr="aria-label:a11y.top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M18 15l-6-6-6 6"/></svg>
   </button>
 
-  <!-- ============================================================
-       HERO
-       ============================================================ -->
-  <section id="hero">
-    <div class="container">
-      <div class="hero-top">
-        <div>
-          <h1>HI, I'M<br>BOHUSLAVA.</h1>
-        </div>
-        <div>
-          <p class="hero-tagline">This is the graphic design side of my portfolio — <strong>playful ideas, bold color and craft</strong> across brands, products and print.</p>
-        </div>
-      </div>
-    </div>
-    <div class="hero-photo img-slot-hero">
-      <img src="https://res.cloudinary.com/livyisn3/image/upload/v1788971800/80357ae1-8d24-461e-815e-b9f5cf8e41a3.png" alt="Portrait of Bohuslava Rozsypalová" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-      <span class="img-fallback">IMG</span>
-    </div>
-  
-    <button class="scroll-cue" onclick="document.getElementById('journey').scrollIntoView({behavior:'smooth'})" aria-label="Scroll to next section">
-      <span class="scroll-circle"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></span>
-      <span class="scroll-label">scroll</span>
-    </button>
-  </section>
+  <main>
 
-  <!-- ============================================================
-       MY JOURNEY INTO DESIGN
-       ============================================================ -->
-  <section id="journey">
-    <div class="journey-grid">
-      <div class="journey-photo img-slot">
-        <img src="https://res.cloudinary.com/livyisn3/image/upload/v1788972020/MaistonFamily.png" alt="Behind the scenes" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-        <span class="img-fallback">IMG</span>
+    <!-- ============================================================
+         HERO
+         ============================================================ -->
+    <section id="hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <h1 data-i18n="hero.title">HI, I'M<br>BOHUSLAVA.</h1>
+          <p class="hero-tagline" data-i18n="hero.tagline">This is the graphic design side of my portfolio — <strong>playful ideas, bold color and craft</strong> across brands, products and print.</p>
+        </div>
+        <div class="hero-photo img-slot is-contain">
+          <img src="https://res.cloudinary.com/livyisn3/image/upload/v1792399944/Portr%C3%A9t_obklopen%C3%BD_%C4%8Dipmi_a_obvodmi.png" alt="Portrait of Bohuslava Rozsypalová" data-i18n-attr="alt:hero.alt">
+        </div>
       </div>
-      <div class="journey-text">
-        <h2>My Designs<br>of Products</h2>
-        <p>I love taking a single design idea and translating it across different materials — from canvas bags to ceramic mugs, stickers to packaging. Every project starts with a concept, then finds its own logic in color, scale and texture depending on where it lands. The piece shown here — a tote bag built around Renaissance-inspired artwork — is one example of that process: classical imagery reworked into something wearable and everyday.</p>
-      </div>
-    </div>
-  </section>
+      <button class="scroll-cue" data-scroll-to="showcase" aria-label="Scroll to next section" data-i18n-attr="aria-label:a11y.scroll">
+        <span class="scroll-circle"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></span>
+        <span class="scroll-label" data-i18n="a11y.scrollLabel">scroll</span>
+      </button>
+    </section>
 
-  <!-- ============================================================
-       MINI GALLERY 
-       ============================================================ -->
-  <section id="mini-gallery-1" class="mini-gallery-section">
-    <div class="mini-gallery-wrap">
-      <p class="game-eyebrow">a closer look</p>
-      <h2>More on Materials</h2>
-      <p class="mini-gallery-hint">A few more pieces from the same series.</p>
-      <div class="mini-gallery-grid">
-        <div class="img-slot">
-          <img src="https://res.cloudinary.com/livyisn3/image/upload/v1788949942/Maison_Collection_Shower.png" alt="" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-          <span class="img-fallback">IMG</span>
-        </div>
-        <div class="img-slot">
-          <img src="https://res.cloudinary.com/livyisn3/image/upload/v1788949916/MaisonFront.png" alt="" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-          <span class="img-fallback">IMG</span>
-        </div>
-        <div class="img-slot">
-          <img src="https://res.cloudinary.com/livyisn3/image/upload/v1788949902/MaisonCream.png" alt="" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-          <span class="img-fallback">IMG</span>
-        </div>
-        <div class="img-slot">
-          <img src="https://res.cloudinary.com/livyisn3/image/upload/v1788949904/Maison_Collection.png" alt="" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-          <span class="img-fallback">IMG</span>
-        </div>
-      </div>
-    </div>
-  
-    <button class="scroll-cue" onclick="document.getElementById('cup-design').scrollIntoView({behavior:'smooth'})" aria-label="Scroll to next section">
-      <span class="scroll-circle"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></span>
-      <span class="scroll-label">scroll</span>
-    </button>
-  </section>
+    <!-- ============================================================
+         CAROUSEL — bannery, tlačidlo vedie na príslušnú sekciu
+         ============================================================ -->
+    <section id="showcase" aria-roledescription="carousel" aria-label="Featured work" data-i18n-attr="aria-label:car.label">
+      <div class="carousel" id="carousel">
+        <div class="carousel-track" id="carousel-track">
 
-  <!-- ============================================================
-       MATERIAL SHOWCASE 
-       ============================================================ -->
-  <section id="cup-design" class="material-section alt-bg">
-    <div class="material-grid reverse">
-      <div class="material-photo img-slot">
-        <img src="https://res.cloudinary.com/livyisn3/image/upload/v1788972524/sakura-mug.png" alt="Cup design" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-        <span class="img-fallback">IMG</span>
-      </div>
-      <div class="material-text">
-        <h2 id="cupdesign-heading">ONE IDEA,<br>A NEW SURFACE</h2>
-        <p>Here's the same approach applied to a cup — translating a flat design into a wraparound surface without losing its balance or read. Getting a pattern or illustration to work around a curved, functional object is its own small puzzle, and one I genuinely enjoy solving.</p>
-      </div>
-    </div>
-  </section>
+          <article class="carousel-slide slide-1" aria-roledescription="slide">
+            <div class="slide-inner">
+              <div class="slide-text">
+                <p class="slide-count">01</p>
+                <h2 data-i18n="displays.title">Design for<br>every display</h2>
+                <p data-i18n="displays.lead">Layouts that feel at home on a phone, a tablet and a wide desktop screen — without losing their character.</p>
+                <button class="slide-cta" data-scroll-to="displays"><span data-i18n="car.more">See more</span> <span aria-hidden="true">→</span></button>
+              </div>
+              <div class="slide-visual">
+                <img src="https://res.cloudinary.com/livyisn3/image/upload/v1792396825/Tri_zariadenia_s_elegantn%C3%BDm_webom_Grandhotel.png" alt="Grandhotel website on a laptop, tablet and phone" data-i18n-attr="alt:car.alt1">
+              </div>
+            </div>
+          </article>
 
-  <!-- ============================================================
-       scratch-to-reveal canvas 
-       ============================================================ -->
-  <section id="motto">
-    <div class="motto-wrap">
-      <p class="game-eyebrow">interactive</p>
-      <h2>Wipe the screen clean</h2>
-      <p class="motto-hint">Click and drag (or swipe) across the panel below to reveal the image underneath.</p>
-      <div class="scratch-box">
-        <div class="scratch-message img-slot">
-          <img src="https://res.cloudinary.com/livyisn3/image/upload/v1788973314/653c7948-0654-4820-ad4b-95f4b1bc608b.png" alt="" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-          <span class="img-fallback">IMG</span>
-        </div>
-        <canvas class="scratch-canvas" id="scratch-canvas"></canvas>
-      </div>
-      <button class="scratch-reset" id="scratch-reset">Reset</button>
-    </div>
-  </section>
+          <article class="carousel-slide slide-2" aria-roledescription="slide">
+            <div class="slide-inner">
+              <div class="slide-text">
+                <p class="slide-count">02</p>
+                <h2 data-i18n="print.title">Print</h2>
+                <p data-i18n="print.lead">Posters, flyers, packaging and stationery — prepared with care for paper, ink and the final cut.</p>
+                <button class="slide-cta" data-scroll-to="print"><span data-i18n="car.more">See more</span> <span aria-hidden="true">→</span></button>
+              </div>
+              <div class="slide-visual">
+                <img src="https://res.cloudinary.com/livyisn3/image/upload/v1792399541/Pr%C3%A9miov%C3%A1_papiernick%C3%A1_sada_CassCo_na_transparentnom_pozad%C3%AD.png" alt="CassCo stationery set" data-i18n-attr="alt:car.alt2">
+              </div>
+            </div>
+          </article>
 
-  <!-- ============================================================
-       BEHIND THE PROCESS 
-       ============================================================ -->
-  <section id="journey-2">
-    <div class="journey-grid">
-      <div class="journey-photo img-slot">
-        <img src="https://res.cloudinary.com/livyisn3/image/upload/v1788972769/Renesakideabook.png" alt="Behind the process" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-        <span class="img-fallback">IMG</span>
-      </div>
-      <div class="journey-text">
-        <h2 id="journey2-heading">BEHIND<br>THE PROCESS</h2>
-        <p>Every piece starts long before the final render — with sketches, color tests and a lot of trial and error. This is a closer look at how an idea actually gets built: the references I collect, the drafts that don't make it, and the small decisions that shape the final piece. It's less polished than the finished work, but it's where the real thinking happens.</p>
-      </div>
-    </div>
-  
-    <button class="scroll-cue" onclick="document.getElementById('moodboard').scrollIntoView({behavior:'smooth'})" aria-label="Scroll to next section">
-      <span class="scroll-circle"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></span>
-      <span class="scroll-label">scroll</span>
-    </button>
-  </section>
+          <article class="carousel-slide slide-3" aria-roledescription="slide">
+            <div class="slide-inner">
+              <div class="slide-text">
+                <p class="slide-count">03</p>
+                <h2 data-i18n="landing.title">Landing pages<br>with a clear goal</h2>
+                <p data-i18n="landing.lead">One page, one message, one action. Designed to guide visitors straight to the click that matters.</p>
+                <button class="slide-cta" data-scroll-to="landing"><span data-i18n="car.more">See more</span> <span aria-hidden="true">→</span></button>
+              </div>
+              <div class="slide-visual">
+                <img src="https://res.cloudinary.com/livyisn3/image/upload/v1792397696/ucbseminar.png" alt="Landing page for a UCB seminar" data-i18n-attr="alt:car.alt3">
+              </div>
+            </div>
+          </article>
 
-  <!-- ============================================================
-       MOODBOARD 
-       ============================================================ -->
-  <section id="moodboard">
-    <div class="moodboard-wrap">
-      <p class="game-eyebrow">play around</p>
-      <h2>Test Your Color Combinations</h2>
-      <p class="moodboard-hint">Drag the color swatches around and see which combinations feel right together.</p>
-      <div class="moodboard-board" id="moodboard-board">
-        <div class="moodboard-item swatch-1" data-x="20" data-y="20">Peach</div>
-        <div class="moodboard-item swatch-2" data-x="130" data-y="20">Sage</div>
-        <div class="moodboard-item swatch-3" data-x="240" data-y="20">Charcoal</div>
-        <div class="moodboard-item swatch-4" data-x="350" data-y="20">Cream</div>
-        <div class="moodboard-item swatch-5" data-x="460" data-y="20">Terracotta</div>
-        <div class="moodboard-item swatch-6" data-x="20" data-y="140">Mauve</div>
-        <div class="moodboard-item swatch-7" data-x="130" data-y="140">Taupe</div>
-        <div class="moodboard-item swatch-8" data-x="240" data-y="140">Dusty Rose</div>
-        <div class="moodboard-item swatch-9" data-x="350" data-y="140">Soft Sage</div>
-        <div class="moodboard-item swatch-10" data-x="460" data-y="140">Warm Sand</div>
-        <div class="moodboard-item swatch-11" data-x="20" data-y="260">Blush Pink</div>
-        <div class="moodboard-item swatch-12" data-x="130" data-y="260">Muted Clay</div>
-        <div class="moodboard-item swatch-13" data-x="240" data-y="260">Sandstone</div>
-        <div class="moodboard-item swatch-14" data-x="350" data-y="260">Deep Terracotta</div>
-        <div class="moodboard-item swatch-15" data-x="460" data-y="260">Honey Sand</div>
-        <div class="moodboard-item swatch-16" data-x="20" data-y="380">Warm Grey</div>
-        <div class="moodboard-item swatch-17" data-x="130" data-y="380">Faded Coral</div>
-        <div class="moodboard-item swatch-18" data-x="240" data-y="380">Soft Olive</div>
-        <div class="moodboard-item swatch-19" data-x="350" data-y="380">Espresso</div>
-        <div class="moodboard-item swatch-20" data-x="460" data-y="380">Ivory</div>
-        <div class="moodboard-item is-photo is-fixed fixed-left img-slot" style="width:130px;height:130px;">
-          <img src="https://res.cloudinary.com/livyisn3/image/upload/v1788973055/b007b5c8-96dd-40f1-8f30-c9978dcaf4e7.png" alt="" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-          <span class="img-fallback">IMG</span>
-        </div>
-        <div class="moodboard-item is-photo is-fixed fixed-right img-slot" style="width:110px;height:110px;">
-          <img src="https://res.cloudinary.com/livyisn3/image/upload/v1788973054/a6dfd1cf-5232-4cd6-8896-b4616de0a574.png" alt="" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-          <span class="img-fallback">IMG</span>
-        </div>
-      </div>
-      <button class="moodboard-reset" id="moodboard-reset">Reset board</button>
-    </div>
-  
-    <button class="scroll-cue" onclick="document.getElementById('mini-gallery-2').scrollIntoView({behavior:'smooth'})" aria-label="Scroll to next section">
-      <span class="scroll-circle"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></span>
-      <span class="scroll-label">scroll</span>
-    </button>
-  </section>
+          <article class="carousel-slide slide-4" aria-roledescription="slide">
+            <div class="slide-inner">
+              <div class="slide-text">
+                <p class="slide-count">04</p>
+                <h2 data-i18n="webs.title">My other<br>websites</h2>
+                <p data-i18n="webs.lead">A few more sites I've designed and built — each with its own look, audience and purpose.</p>
+                <button class="slide-cta" data-scroll-to="webs"><span data-i18n="car.more">See more</span> <span aria-hidden="true">→</span></button>
+              </div>
+              <div class="slide-visual">
+                <img src="https://res.cloudinary.com/livyisn3/image/upload/v1792399592/Sn%C3%ADmka_obrazovky_2026-10-19_o_10.46.26.png" alt="Preview of one of my websites" data-i18n-attr="alt:car.alt4">
+              </div>
+            </div>
+          </article>
 
-  <!-- ============================================================
-       MINI GALLERY 2 
-       ============================================================ -->
-  <section id="mini-gallery-2" class="mini-gallery-section alt-bg">
-    <div class="mini-gallery-wrap">
-      <p class="game-eyebrow">keep exploring</p>
-      <h2>Explore More Designs</h2>
-      <p class="mini-gallery-hint">A closer look at a few more favorite pieces.</p>
-      <div class="mini-gallery-grid">
-        <div class="img-slot">
-          <img src="https://res.cloudinary.com/livyisn3/image/upload/v1788976242/Ecopoint.png" alt="" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-          <span class="img-fallback">IMG</span>
         </div>
-        <div class="img-slot">
-          <img src="https://res.cloudinary.com/livyisn3/image/upload/v1788977180/ChatGPT_Image_9._9._2026_19_55_20.png" alt="" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-          <span class="img-fallback">IMG</span>
-        </div>
-        <div class="img-slot">
-          <img src="https://res.cloudinary.com/livyisn3/image/upload/v1788977181/ChatGPT_Image_9._9._2026_19_51_43.png" alt="" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-          <span class="img-fallback">IMG</span>
-        </div>
-        <div class="img-slot">
-          <img src="https://res.cloudinary.com/livyisn3/image/upload/v1788977178/ChatGPT_Image_9._9._2026_20_05_38.png" alt="" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-          <span class="img-fallback">IMG</span>
-        </div>
-      </div>
-    </div>
-  
-    <button class="scroll-cue" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})" aria-label="Scroll to next section">
-      <span class="scroll-circle"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></span>
-      <span class="scroll-label">scroll</span>
-    </button>
-  </section>
 
-  <!-- ============================================================
-       WHAT I CAN DO FOR YOU
-       ============================================================ -->
-  <section id="services">
-    <div class="services-grid">
-      <div class="services-heading">
-        <h2 id="services-heading">WHAT I<br>CAN DO<br>FOR YOU</h2>
+        <div class="carousel-controls">
+          <button class="carousel-arrow" id="carousel-prev" aria-label="Previous banner" data-i18n-attr="aria-label:car.prev">‹</button>
+          <div class="carousel-dots" id="carousel-dots"></div>
+          <button class="carousel-arrow" id="carousel-next" aria-label="Next banner" data-i18n-attr="aria-label:car.next">›</button>
+        </div>
       </div>
-      <div class="service-cards">
-        <div class="service-card">
-          <div class="service-icon">
-            <svg viewBox="0 0 76 76" xmlns="http://www.w3.org/2000/svg">
-              <rect width="76" height="76" fill="#FBF6E2"/>
-              <circle cx="24" cy="26" r="9" fill="#3E2F26"/>
-              <circle cx="54" cy="26" r="9" fill="#F1CEAE"/>
-              <circle cx="38" cy="52" r="9" fill="#F1CEAE"/>
-              <path d="M24 26L38 52M54 26L38 52" stroke="#3E2F26" stroke-width="3"/>
-            </svg>
+    </section>
+
+    <!-- ============================================================
+         DIZAJNY PRODUKTOV
+         ============================================================ -->
+    <section id="journey" class="split-section">
+      <div class="split-grid">
+        <div class="split-photo img-slot">
+          <img src="https://res.cloudinary.com/livyisn3/image/upload/v1788972020/MaistonFamily.png" alt="Maison product family" data-i18n-attr="alt:journey.alt">
+        </div>
+        <div class="split-text">
+          <h2 data-i18n="journey.title">My Designs<br>of Products</h2>
+          <p data-i18n="journey.text">I love taking a single design idea and translating it across different materials — from canvas bags to ceramic mugs, stickers to packaging. Every project starts with a concept, then finds its own logic in color, scale and texture depending on where it lands. The piece shown here — a tote bag built around Renaissance-inspired artwork — is one example of that process: classical imagery reworked into something wearable and everyday.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         MATERIÁLY — mini galéria
+         ============================================================ -->
+    <section id="mini-gallery" class="gallery-section">
+      <div class="gallery-wrap">
+        <p class="eyebrow" data-i18n="mg.eyebrow">a closer look</p>
+        <h2 data-i18n="mg.title">More on Materials</h2>
+        <p class="section-hint" data-i18n="mg.hint">A few more pieces from the same series.</p>
+        <div class="mini-gallery-grid">
+          <div class="img-slot"><img src="https://res.cloudinary.com/livyisn3/image/upload/v1788949942/Maison_Collection_Shower.png" alt=""></div>
+          <div class="img-slot"><img src="https://res.cloudinary.com/livyisn3/image/upload/v1788949916/MaisonFront.png" alt=""></div>
+          <div class="img-slot"><img src="https://res.cloudinary.com/livyisn3/image/upload/v1788949902/MaisonCream.png" alt=""></div>
+          <div class="img-slot"><img src="https://res.cloudinary.com/livyisn3/image/upload/v1788949904/Maison_Collection.png" alt=""></div>
+        </div>
+      </div>
+      <button class="scroll-cue" data-scroll-to="cup-design" aria-label="Scroll to next section" data-i18n-attr="aria-label:a11y.scroll">
+        <span class="scroll-circle"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></span>
+        <span class="scroll-label" data-i18n="a11y.scrollLabel">scroll</span>
+      </button>
+    </section>
+
+    <!-- ============================================================
+         DIZAJN HRNČEKA
+         ============================================================ -->
+    <section id="cup-design" class="split-section">
+      <div class="split-grid is-reversed">
+        <div class="split-photo img-slot">
+          <img src="https://res.cloudinary.com/livyisn3/image/upload/v1788972524/sakura-mug.png" alt="Sakura mug design" data-i18n-attr="alt:cup.alt">
+        </div>
+        <div class="split-text">
+          <h2 class="wave-heading" data-i18n="cup.title">ONE IDEA,<br>A NEW SURFACE</h2>
+          <p data-i18n="cup.text">Here's the same approach applied to a cup — translating a flat design into a wraparound surface without losing its balance or read. Getting a pattern or illustration to work around a curved, functional object is its own small puzzle, and one I genuinely enjoy solving.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         STIERACIA PLOCHA
+         ============================================================ -->
+    <section id="motto">
+      <div class="motto-wrap">
+        <p class="eyebrow" data-i18n="motto.eyebrow">interactive</p>
+        <h2 data-i18n="motto.title">Wipe the screen clean</h2>
+        <p class="section-hint" data-i18n="motto.hint">Click and drag (or swipe) across the panel below to reveal the image underneath.</p>
+        <div class="scratch-box">
+          <div class="scratch-image img-slot">
+            <img src="https://res.cloudinary.com/livyisn3/image/upload/v1788973314/653c7948-0654-4820-ad4b-95f4b1bc608b.png" alt="">
           </div>
-          <div>
-            <h3>Web &amp; Data Integrations</h3>
-            <p>Connecting websites, CRMs and data platforms so information flows exactly where it needs to.</p>
+          <canvas class="scratch-canvas" id="scratch-canvas"></canvas>
+        </div>
+        <button class="outline-btn" id="scratch-reset" data-i18n="motto.reset">Reset</button>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         PROCES
+         ============================================================ -->
+    <section id="journey-2" class="split-section is-alt">
+      <div class="split-grid">
+        <div class="split-photo img-slot">
+          <img src="https://res.cloudinary.com/livyisn3/image/upload/v1788972769/Renesakideabook.png" alt="Idea book with sketches" data-i18n-attr="alt:process.alt">
+        </div>
+        <div class="split-text">
+          <h2 class="wave-heading" data-i18n="process.title">BEHIND<br>THE PROCESS</h2>
+          <p data-i18n="process.text">Every piece starts long before the final render — with sketches, color tests and a lot of trial and error. This is a closer look at how an idea actually gets built: the references I collect, the drafts that don't make it, and the small decisions that shape the final piece. It's less polished than the finished work, but it's where the real thinking happens.</p>
+        </div>
+      </div>
+      <button class="scroll-cue" data-scroll-to="moodboard" aria-label="Scroll to next section" data-i18n-attr="aria-label:a11y.scroll">
+        <span class="scroll-circle"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></span>
+        <span class="scroll-label" data-i18n="a11y.scrollLabel">scroll</span>
+      </button>
+    </section>
+
+    <!-- ============================================================
+         MOODBOARD — farebné vzorky na presúvanie
+         ============================================================ -->
+    <section id="moodboard">
+      <div class="moodboard-wrap">
+        <p class="eyebrow" data-i18n="mood.eyebrow">play around</p>
+        <h2 data-i18n="mood.title">Test Your Color Combinations</h2>
+        <p class="section-hint" data-i18n="mood.hint">Drag the color swatches around and see which combinations feel right together.</p>
+        <div class="moodboard-board" id="moodboard-board">
+          <div class="swatch swatch-1" data-x="20" data-y="20" data-i18n="color.peach">Peach</div>
+          <div class="swatch swatch-2" data-x="130" data-y="20" data-i18n="color.sage">Sage</div>
+          <div class="swatch swatch-3" data-x="240" data-y="20" data-i18n="color.charcoal">Charcoal</div>
+          <div class="swatch swatch-4" data-x="350" data-y="20" data-i18n="color.cream">Cream</div>
+          <div class="swatch swatch-5" data-x="460" data-y="20" data-i18n="color.terracotta">Terracotta</div>
+          <div class="swatch swatch-6" data-x="20" data-y="140" data-i18n="color.mauve">Mauve</div>
+          <div class="swatch swatch-7" data-x="130" data-y="140" data-i18n="color.taupe">Taupe</div>
+          <div class="swatch swatch-8" data-x="240" data-y="140" data-i18n="color.dustyrose">Dusty Rose</div>
+          <div class="swatch swatch-9" data-x="350" data-y="140" data-i18n="color.softsage">Soft Sage</div>
+          <div class="swatch swatch-10" data-x="460" data-y="140" data-i18n="color.warmsand">Warm Sand</div>
+          <div class="swatch swatch-11" data-x="20" data-y="260" data-i18n="color.blushpink">Blush Pink</div>
+          <div class="swatch swatch-12" data-x="130" data-y="260" data-i18n="color.mutedclay">Muted Clay</div>
+          <div class="swatch swatch-13" data-x="240" data-y="260" data-i18n="color.sandstone">Sandstone</div>
+          <div class="swatch swatch-14" data-x="350" data-y="260" data-i18n="color.deepterracotta">Deep Terracotta</div>
+          <div class="swatch swatch-15" data-x="460" data-y="260" data-i18n="color.honeysand">Honey Sand</div>
+          <div class="swatch swatch-16" data-x="20" data-y="380" data-i18n="color.warmgrey">Warm Grey</div>
+          <div class="swatch swatch-17" data-x="130" data-y="380" data-i18n="color.fadedcoral">Faded Coral</div>
+          <div class="swatch swatch-18" data-x="240" data-y="380" data-i18n="color.softolive">Soft Olive</div>
+          <div class="swatch swatch-19" data-x="350" data-y="380" data-i18n="color.espresso">Espresso</div>
+          <div class="swatch swatch-20" data-x="460" data-y="380" data-i18n="color.ivory">Ivory</div>
+          <div class="moodboard-photo is-left img-slot">
+            <img src="https://res.cloudinary.com/livyisn3/image/upload/v1788973055/b007b5c8-96dd-40f1-8f30-c9978dcaf4e7.png" alt="">
+          </div>
+          <div class="moodboard-photo is-right img-slot">
+            <img src="https://res.cloudinary.com/livyisn3/image/upload/v1788973054/a6dfd1cf-5232-4cd6-8896-b4616de0a574.png" alt="">
           </div>
         </div>
-        <div class="service-card">
-          <div class="service-icon">
-            <svg viewBox="0 0 76 76" xmlns="http://www.w3.org/2000/svg">
-              <rect width="76" height="76" fill="#FBF6E2"/>
-              <circle cx="38" cy="38" r="24" fill="#3E2F26"/>
-              <circle cx="38" cy="38" r="15" fill="#F1CEAE"/>
-              <circle cx="38" cy="38" r="6" fill="#3E2F26"/>
-            </svg>
-          </div>
-          <div>
-            <h3>Engagement &amp; Automation</h3>
-            <p>Bloomreach and Salesforce Marketing Cloud journeys, segmentation and personalization that convert.</p>
-          </div>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">
-            <svg viewBox="0 0 76 76" xmlns="http://www.w3.org/2000/svg">
-              <rect width="76" height="76" fill="#FBF6E2"/>
-              <rect x="14" y="14" width="30" height="48" fill="#F1CEAE"/>
-              <rect x="44" y="38" width="24" height="24" fill="#3E2F26"/>
-            </svg>
-          </div>
-          <div>
-            <h3>Web &amp; Graphic Design</h3>
-            <p>Clean, modern layouts and visual identities across web, brand and print.</p>
-          </div>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">
-            <svg viewBox="0 0 76 76" xmlns="http://www.w3.org/2000/svg">
-              <rect width="76" height="76" fill="#FBF6E2"/>
-              <circle cx="38" cy="38" r="22" fill="#F1CEAE"/>
-              <circle cx="38" cy="38" r="22" fill="none" stroke="#3E2F26" stroke-width="3"/>
-              <circle cx="38" cy="38" r="9" fill="#3E2F26"/>
-            </svg>
-          </div>
-          <div>
-            <h3>Photography</h3>
-            <p>Portrait, product and nature photography with an eye for mood and detail.</p>
-          </div>
-        </div>
+        <button class="outline-btn" id="moodboard-reset" data-i18n="mood.reset">Reset board</button>
       </div>
-    </div>
-  
-    <button class="scroll-cue" onclick="document.getElementById('gallery-explore').scrollIntoView({behavior:'smooth'})" aria-label="Scroll to next section">
-      <span class="scroll-circle"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></span>
-      <span class="scroll-label">scroll</span>
-    </button>
-  </section>
+      <button class="scroll-cue" data-scroll-to="gallery-explore" aria-label="Scroll to next section" data-i18n-attr="aria-label:a11y.scroll">
+        <span class="scroll-circle"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></span>
+        <span class="scroll-label" data-i18n="a11y.scrollLabel">scroll</span>
+      </button>
+    </section>
 
-  <!-- ============================================================
-       GALLERY EXPLORE - MVICTORY
-       ============================================================ -->
-  <section id="gallery-explore">
-    <div class="container">
-      <p class="game-eyebrow">browse the archive</p>
-      <h2>Explore the Full Gallery: M-Victory Website</h2>
-      <p class="mini-gallery-hint">Pick a category to see 10 more pieces from that collection.</p>
+    <!-- ============================================================
+         GALÉRIA M-VICTORY — kategórie s detailom
+         ============================================================ -->
+    <section id="gallery-explore">
+      <div class="container">
+        <p class="eyebrow" data-i18n="gal.eyebrow">browse the archive</p>
+        <h2 data-i18n="gal.title">Explore the Full Gallery: M-Victory Website</h2>
+        <p class="section-hint" data-i18n="gal.hint">Pick a category to see 10 more pieces from that collection.</p>
 
-      <div class="gallery-cat-grid" id="gallery-cat-grid">
-        <button class="gallery-cat-card" data-cat="branding">
-          <span class="img-slot-victory">
-            <img src="https://res.cloudinary.com/livyisn3/image/upload/v1788983739/MainPageMVwoman.jpg" alt="Brand Identity" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-            <span class="img-fallback-victory">IMG</span>
-          </span>
-          <span class="gallery-cat-title">Women’s Section</span>
-        </button>
-        <button class="gallery-cat-card" data-cat="illustration">
-          <span class="img-slot-victory">
-            <img src="https://res.cloudinary.com/livyisn3/image/upload/v1788983739/MainPageMVman.jpg" alt="Illustration &amp; Art" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-            <span class="img-fallback-victory">IMG</span>
-          </span>
-          <span class="gallery-cat-title">Men’s Section</span>
-        </button>
-      </div>
-
-      <div class="gallery-detail" id="gallery-detail-branding" hidden>
-        <button class="back-link" data-back>← Back to categories</button>
-        <div class="gallery-detail-grid">
-          <div class="img-slot"><img src="https://res.cloudinary.com/livyisn3/image/upload/v1788984130/zeny_ruzova_oprava.jpg" alt="" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span class="img-fallback">IMG</span></div>
-          <div class="img-slot"><img src="https://res.cloudinary.com/livyisn3/image/upload/v1788984108/pristroj.jpg" alt="" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span class="img-fallback">IMG</span></div>
-          <div class="img-slot"><img src="https://res.cloudinary.com/livyisn3/image/upload/v1788984107/navrh_kocky_tvar.jpg" alt="" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span class="img-fallback">IMG</span></div>
-          <div class="img-slot"><img src="https://res.cloudinary.com/livyisn3/image/upload/v1788984114/Endermologia_z2_copy.jpg" alt="" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span class="img-fallback">IMG</span></div>
-          <div class="img-slot"><img src="https://res.cloudinary.com/livyisn3/image/upload/v1788984110/Endermologia_z1_target_celo.jpg" alt="" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span class="img-fallback">IMG</span></div>
-          <div class="img-slot"><img src="https://res.cloudinary.com/livyisn3/image/upload/v1788984116/Zoznam_o%C5%A1etren%C3%AD_%C5%BEena_-_Cielen%C3%A1_starostlivos%C5%A5_tv%C3%A1r_3D.jpg" alt="" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span class="img-fallback">IMG</span></div>
-          <div class="img-slot"><img src="https://res.cloudinary.com/livyisn3/image/upload/v1788984113/kontury_zena_serum_okienko.jpg" alt="" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span class="img-fallback">IMG</span></div>
-          <div class="img-slot"><img src="https://res.cloudinary.com/livyisn3/image/upload/v1788984114/pery_zena_4.jpg" alt="" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span class="img-fallback">IMG</span></div>
-          <div class="img-slot"><img src="https://res.cloudinary.com/livyisn3/image/upload/v1788984110/pura_natura_copy.jpg" alt="" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span class="img-fallback">IMG</span></div>
-          <div class="img-slot"><img src="https://res.cloudinary.com/livyisn3/image/upload/v1788984365/zena_2.jpg" alt="" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span class="img-fallback">IMG</span></div>
+        <div class="gallery-cat-grid" id="gallery-cat-grid">
+          <button class="gallery-cat-card" data-cat="women">
+            <span class="gallery-cat-img img-slot">
+              <img src="https://res.cloudinary.com/livyisn3/image/upload/v1788983739/MainPageMVwoman.jpg" alt="">
+            </span>
+            <span class="gallery-cat-title" data-i18n="gal.women">Women’s Section</span>
+          </button>
+          <button class="gallery-cat-card" data-cat="men">
+            <span class="gallery-cat-img img-slot">
+              <img src="https://res.cloudinary.com/livyisn3/image/upload/v1788983739/MainPageMVman.jpg" alt="">
+            </span>
+            <span class="gallery-cat-title" data-i18n="gal.men">Men’s Section</span>
+          </button>
         </div>
-      </div>
 
-      <div class="gallery-detail" id="gallery-detail-illustration" hidden>
-        <button class="back-link" data-back>← Back to categories</button>
-        <div class="gallery-detail-grid">
-          <div class="img-slot"><img src="https://res.cloudinary.com/livyisn3/image/upload/v1788984269/uvod_muz_menu.jpg" alt="" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span class="img-fallback">IMG</span></div>
-          <div class="img-slot"><img src="https://res.cloudinary.com/livyisn3/image/upload/v1788984146/3.jpg" alt="" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span class="img-fallback">IMG</span></div>
-          <div class="img-slot"><img src="https://res.cloudinary.com/livyisn3/image/upload/v1788984447/Slide_3_final_tmavsie_okienko.jpg" alt="" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span class="img-fallback">IMG</span></div>
-          <div class="img-slot"><img src="https://res.cloudinary.com/livyisn3/image/upload/v1788984619/Muz_detail_celoM.jpg" alt="" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span class="img-fallback">IMG</span></div>
-          <div class="img-slot"><img src="https://res.cloudinary.com/livyisn3/image/upload/v1788984648/pristrojove_tvar_muz_brada.jpg" alt="" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span class="img-fallback">IMG</span></div>
-          <div class="img-slot"><img src="https://res.cloudinary.com/livyisn3/image/upload/v1788984694/pristrojove_tvar_muz_celo.jpg" alt="" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span class="img-fallback">IMG</span></div>
-          <div class="img-slot"><img src="https://res.cloudinary.com/livyisn3/image/upload/v1788984505/muz_1_s_gulkami.jpg" alt="" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span class="img-fallback">IMG</span></div>
-          <div class="img-slot"><img src="https://res.cloudinary.com/livyisn3/image/upload/v1788984184/Lavove_kamene_mu%C5%BE.jpg" alt="" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span class="img-fallback">IMG</span></div>
-          <div class="img-slot"><img src="https://res.cloudinary.com/livyisn3/image/upload/v1788984179/kozmeticke_produkty_pre_mu%C5%BEov_kakao.jpg" alt="" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span class="img-fallback">IMG</span></div>
-          <div class="img-slot"><img src="https://res.cloudinary.com/livyisn3/image/upload/v1788984751/kozmeticke_produkty_pre_mu%C5%BEov_pura_natura_-_k%C3%B3pia.jpg" alt="" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span class="img-fallback">IMG</span></div>
-        </div>
-      </div>
-    </div>
-
-    <button class="scroll-cue" onclick="document.getElementById('specimen').scrollIntoView({behavior:'smooth'})" aria-label="Scroll to next section">
-      <span class="scroll-circle"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></span>
-      <span class="scroll-label">scroll</span>
-    </button>
-  </section>
-
-  <!-- ============================================================
-       TYPE & COLOR SPECIMEN 
-       ============================================================ -->
-  <section id="specimen">
-    <div class="container">
-      <p class="game-eyebrow">behind the design</p>
-      <h2 style="margin-bottom:2.2rem;">Type &amp; Color System</h2>
-
-      <div class="specimen-block">
-        <p class="specimen-label">Typeface — Montserrat (fallback: Roboto → Helvetica Neue → Arial)</p>
-        <p class="specimen-h1">Aa Bb Cc — ExtraBold 800 / H1</p>
-        <p class="specimen-h2">Aa Bb Cc — Bold 700 / H2</p>
-        <p class="specimen-h3">Aa Bb Cc — SemiBold 600 / H3</p>
-        <p class="specimen-body">Aa Bb Cc — Regular 400 / body text, used for paragraphs across the site.</p>
-      </div>
-
-      <div class="specimen-block">
-        <p class="specimen-label">Palette — Desert Sunset</p>
-        <div class="swatch-grid">
-          <div class="swatch-card"><span class="swatch-color" style="background:#F1CEAE;"></span><span class="swatch-name">Peach<br>#F1CEAE</span></div>
-          <div class="swatch-card"><span class="swatch-color" style="background:#CBD8C4;"></span><span class="swatch-name">Sage<br>#CBD8C4</span></div>
-          <div class="swatch-card"><span class="swatch-color" style="background:#3E2F26;"></span><span class="swatch-name">Charcoal<br>#3E2F26</span></div>
-          <div class="swatch-card"><span class="swatch-color" style="background:#FBF6E2;"></span><span class="swatch-name">Cream<br>#FBF6E2</span></div>
-          <div class="swatch-card"><span class="swatch-color" style="background:#D9AB94;"></span><span class="swatch-name">Terracotta<br>#D9AB94</span></div>
-          <div class="swatch-card"><span class="swatch-color" style="background:#DBC1B4;"></span><span class="swatch-name">Mauve<br>#DBC1B4</span></div>
-          <div class="swatch-card"><span class="swatch-color" style="background:#AB9274;"></span><span class="swatch-name">Taupe<br>#AB9274</span></div>
-        </div>
-      </div>
-    </div>
-  
-    <button class="scroll-cue" onclick="document.getElementById('wins').scrollIntoView({behavior:'smooth'})" aria-label="Scroll to next section">
-      <span class="scroll-circle"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></span>
-      <span class="scroll-label">scroll</span>
-    </button>
-  </section>
-
-  <!-- ============================================================
-       FAVORITE PATTERNS
-       ============================================================ -->
-  <section id="wins">
-    <div class="container">
-      <h2>Favorite Patterns</h2>
-      <div class="wins-grid">
-        <div class="win-card">
-          <div class="win-card-img img-slot">
-            <img src="https://res.cloudinary.com/livyisn3/image/upload/v1788979630/PatternA.png" alt="" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-            <span class="img-fallback">IMG</span>
-          </div>
-          <div class="win-card-body">
-            <h3>Pattern 01</h3>
+        <div class="gallery-detail" id="gallery-detail-women" hidden>
+          <button class="outline-btn back-link" data-i18n="gal.back">← Back to categories</button>
+          <div class="gallery-detail-grid">
+            <div class="img-slot"><img src="https://res.cloudinary.com/livyisn3/image/upload/v1788984130/zeny_ruzova_oprava.jpg" alt=""></div>
+            <div class="img-slot"><img src="https://res.cloudinary.com/livyisn3/image/upload/v1788984108/pristroj.jpg" alt=""></div>
+            <div class="img-slot"><img src="https://res.cloudinary.com/livyisn3/image/upload/v1788984107/navrh_kocky_tvar.jpg" alt=""></div>
+            <div class="img-slot"><img src="https://res.cloudinary.com/livyisn3/image/upload/v1788984114/Endermologia_z2_copy.jpg" alt=""></div>
+            <div class="img-slot"><img src="https://res.cloudinary.com/livyisn3/image/upload/v1788984110/Endermologia_z1_target_celo.jpg" alt=""></div>
+            <div class="img-slot"><img src="https://res.cloudinary.com/livyisn3/image/upload/v1788984116/Zoznam_o%C5%A1etren%C3%AD_%C5%BEena_-_Cielen%C3%A1_starostlivos%C5%A5_tv%C3%A1r_3D.jpg" alt=""></div>
+            <div class="img-slot"><img src="https://res.cloudinary.com/livyisn3/image/upload/v1788984113/kontury_zena_serum_okienko.jpg" alt=""></div>
+            <div class="img-slot"><img src="https://res.cloudinary.com/livyisn3/image/upload/v1788984114/pery_zena_4.jpg" alt=""></div>
+            <div class="img-slot"><img src="https://res.cloudinary.com/livyisn3/image/upload/v1788984110/pura_natura_copy.jpg" alt=""></div>
+            <div class="img-slot"><img src="https://res.cloudinary.com/livyisn3/image/upload/v1788984365/zena_2.jpg" alt=""></div>
           </div>
         </div>
-        <div class="win-card">
-          <div class="win-card-img img-slot">
-            <img src="https://res.cloudinary.com/livyisn3/image/upload/v1788984800/142346_TILE_01__16625.webp" alt="" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-            <span class="img-fallback">IMG</span>
-          </div>
-          <div class="win-card-body">
-            <h3>Pattern 02</h3>
-          </div>
-        </div>
-        <div class="win-card">
-          <div class="win-card-img img-slot">
-            <img src="https://res.cloudinary.com/livyisn3/image/upload/v1788979814/PatternC.png" alt="" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-            <span class="img-fallback">IMG</span>
-          </div>
-          <div class="win-card-body">
-            <h3>Pattern 03</h3>
+
+        <div class="gallery-detail" id="gallery-detail-men" hidden>
+          <button class="outline-btn back-link" data-i18n="gal.back">← Back to categories</button>
+          <div class="gallery-detail-grid">
+            <div class="img-slot"><img src="https://res.cloudinary.com/livyisn3/image/upload/v1788984269/uvod_muz_menu.jpg" alt=""></div>
+            <div class="img-slot"><img src="https://res.cloudinary.com/livyisn3/image/upload/v1788984157/celo_oprava.jpg" alt=""></div>
+            <div class="img-slot"><img src="https://res.cloudinary.com/livyisn3/image/upload/v1788984447/Slide_3_final_tmavsie_okienko.jpg" alt=""></div>
+            <div class="img-slot"><img src="https://res.cloudinary.com/livyisn3/image/upload/v1788984619/Muz_detail_celoM.jpg" alt=""></div>
+            <div class="img-slot"><img src="https://res.cloudinary.com/livyisn3/image/upload/v1788984648/pristrojove_tvar_muz_brada.jpg" alt=""></div>
+            <div class="img-slot"><img src="https://res.cloudinary.com/livyisn3/image/upload/v1788984694/pristrojove_tvar_muz_celo.jpg" alt=""></div>
+            <div class="img-slot"><img src="https://res.cloudinary.com/livyisn3/image/upload/v1788984505/muz_1_s_gulkami.jpg" alt=""></div>
+            <div class="img-slot"><img src="https://res.cloudinary.com/livyisn3/image/upload/v1788984184/Lavove_kamene_mu%C5%BE.jpg" alt=""></div>
+            <div class="img-slot"><img src="https://res.cloudinary.com/livyisn3/image/upload/v1788984179/kozmeticke_produkty_pre_mu%C5%BEov_kakao.jpg" alt=""></div>
+            <div class="img-slot"><img src="https://res.cloudinary.com/livyisn3/image/upload/v1788984751/kozmeticke_produkty_pre_mu%C5%BEov_pura_natura_-_k%C3%B3pia.jpg" alt=""></div>
           </div>
         </div>
       </div>
-    </div>
-  
-    <button class="scroll-cue" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" aria-label="Scroll to next section">
-      <span class="scroll-circle"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></span>
-      <span class="scroll-label">scroll</span>
-    </button>
-  </section>
+      <button class="scroll-cue" data-scroll-to="displays" aria-label="Scroll to next section" data-i18n-attr="aria-label:a11y.scroll">
+        <span class="scroll-circle"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></span>
+        <span class="scroll-label" data-i18n="a11y.scrollLabel">scroll</span>
+      </button>
+    </section>
 
-  <!-- ============================================================
-       LET'S CONNECT
-       ============================================================ -->
-  <section id="contact">
-    <div class="contact-grid">
-      <div class="contact-text">
-        <h2>LET'S<br>CONNECT</h2>
-        <p>Have a project that needs some color, craft or a design across a new material? Let's talk.</p>
-        <div class="contact-info">
-          <div><strong>Email:</strong> <a href="mailto:b.rozsypalova@gmail.com">b.rozsypalova@gmail.com</a></div>
-          <div><strong>Phone:</strong> <a href="tel:+421903633993">0903 633 993</a></div>
-          <div><strong>Location:</strong> Košice / Bratislava, Slovakia</div>
+    <!-- ============================================================
+         DIZAJN PRE KAŽDÝ DISPLEJ
+         ============================================================ -->
+    <section id="displays">
+      <div class="displays-grid">
+        <div class="displays-text">
+          <p class="eyebrow" data-i18n="displays.eyebrow">responsive design</p>
+          <h2 data-i18n="displays.title">Design for<br>every display</h2>
+          <p data-i18n="displays.text">A good design doesn't break when the screen changes. I plan every layout from the smallest phone up to a wide desktop monitor, so typography, images and buttons always keep their rhythm and stay easy to use.</p>
+        </div>
+        <div class="device-stage">
+          <figure class="device device-desktop">
+            <div class="device-screen img-slot"><img src="https://res.cloudinary.com/livyisn3/image/upload/v1792401026/a4a01d69-fce7-48e8-b4e1-6180d0502bcf.png" alt=""></div>
+            <figcaption data-i18n="displays.desktop">Desktop</figcaption>
+          </figure>
+          <figure class="device device-tablet">
+            <div class="device-screen img-slot"><img src="https://res.cloudinary.com/livyisn3/image/upload/v1792401027/21950dec-d7a8-4a6c-bbe2-b5743a3555bf.png" alt=""></div>
+            <figcaption data-i18n="displays.tablet">Tablet</figcaption>
+          </figure>
+          <figure class="device device-phone">
+            <div class="device-screen img-slot"><img src="https://res.cloudinary.com/livyisn3/image/upload/v1792401116/Mobiln%C3%A1_str%C3%A1nka_interi%C3%A9rov%C3%A9ho_%C5%A1t%C3%BAdia.png" alt=""></div>
+            <figcaption data-i18n="displays.mobile">Mobile</figcaption>
+          </figure>
         </div>
       </div>
-      <div class="contact-form-card">
-        <form id="contact-form" action="https://formsubmit.co/b.rozsypalova@gmail.com" method="POST">
-          <input type="hidden" name="_subject" value="New message from your playful portfolio site">
-          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
-          <div>
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" required>
-          </div>
-          <div>
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required>
-          </div>
-          <div>
-            <label for="message">Message</label>
-            <textarea id="message" name="message" required></textarea>
-          </div>
-          <button type="submit" class="send-btn" id="contact-submit">Send</button>
-          <p class="form-status" id="form-status" role="status"></p>
-          <p class="form-note">Your info won't be shared. Never submit passwords.</p>
-        </form>
+      <button class="scroll-cue" data-scroll-to="print" aria-label="Scroll to next section" data-i18n-attr="aria-label:a11y.scroll">
+        <span class="scroll-circle"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></span>
+        <span class="scroll-label" data-i18n="a11y.scrollLabel">scroll</span>
+      </button>
+    </section>
+
+    <!-- ============================================================
+         TLAČ / PRINT
+         ============================================================ -->
+    <section id="print" class="gallery-section">
+      <div class="gallery-wrap">
+        <p class="eyebrow" data-i18n="print.eyebrow">on paper</p>
+        <h2 data-i18n="print.title">Print</h2>
+        <p class="section-hint" data-i18n="print.lead">Posters, flyers, packaging and stationery — prepared with care for paper, ink and the final cut.</p>
+        <div class="mini-gallery-grid">
+          <div class="img-slot"><img src="https://res.cloudinary.com/livyisn3/image/upload/v1792399541/Pr%C3%A9miov%C3%A1_papiernick%C3%A1_sada_CassCo_na_transparentnom_pozad%C3%AD.png" alt=""></div>
+          <div class="img-slot"><img src="https://res.cloudinary.com/livyisn3/image/upload/v1788977178/ChatGPT_Image_9._9._2026_20_05_38.png" alt=""></div>
+          <div class="img-slot"><img src="https://res.cloudinary.com/livyisn3/image/upload/v1788977181/ChatGPT_Image_9._9._2026_19_51_43.png" alt=""></div>
+          <div class="img-slot"><img src="https://res.cloudinary.com/livyisn3/image/upload/v1788976242/Ecopoint.png" alt=""></div>
+        </div>
       </div>
-    </div>
-  </section>
+      <button class="scroll-cue" data-scroll-to="landing" aria-label="Scroll to next section" data-i18n-attr="aria-label:a11y.scroll">
+        <span class="scroll-circle"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></span>
+        <span class="scroll-label" data-i18n="a11y.scrollLabel">scroll</span>
+      </button>
+    </section>
+
+    <!-- ============================================================
+         LANDING PAGES S JASNÝM CIEĽOM
+         ============================================================ -->
+    <section id="landing">
+      <div class="container">
+        <p class="eyebrow" data-i18n="landing.eyebrow">conversion-focused</p>
+        <h2 data-i18n="landing.title">Landing pages<br>with a clear goal</h2>
+        <p class="section-lead" data-i18n="landing.text">Every landing page I design has a single job. A clear headline, a story that answers the right questions and one strong call to action — nothing that distracts from the goal.</p>
+        <div class="project-grid">
+          <article class="project-card">
+            <div class="project-card-img img-slot"><img src="https://res.cloudinary.com/livyisn3/image/upload/v1792400063/Form_Future__Kreat%C3%ADvna_konferencia.png" alt=""></div>
+            <div class="project-card-body">
+              <h3>Landing page 01</h3>
+              <p class="project-goal"><span data-i18n="landing.goal">Goal:</span> <span data-i18n="landing.goal1">sign-ups</span></p>
+            </div>
+          </article>
+          <article class="project-card">
+            <div class="project-card-img img-slot"><img src="https://res.cloudinary.com/livyisn3/image/upload/v1792400447/Jazz_po_zotmen%C3%AD.png" alt=""></div>
+            <div class="project-card-body">
+              <h3>Landing page 02</h3>
+              <p class="project-goal"><span data-i18n="landing.goal">Goal:</span> <span data-i18n="landing.goal2">sales</span></p>
+            </div>
+          </article>
+          <article class="project-card">
+            <div class="project-card-img img-slot"><img src="https://res.cloudinary.com/livyisn3/image/upload/v1792400577/UCB_semin%C3%A1r_pre_lep%C5%A1iu_starostlivos%C5%A5.png" alt=""></div>
+            <div class="project-card-body">
+              <h3>Landing page 03</h3>
+              <p class="project-goal"><span data-i18n="landing.goal">Goal:</span> <span data-i18n="landing.goal3">bookings</span></p>
+            </div>
+          </article>
+        </div>
+      </div>
+      <button class="scroll-cue" data-scroll-to="webs" aria-label="Scroll to next section" data-i18n-attr="aria-label:a11y.scroll">
+        <span class="scroll-circle"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></span>
+        <span class="scroll-label" data-i18n="a11y.scrollLabel">scroll</span>
+      </button>
+    </section>
+
+    <!-- ============================================================
+         MOJE ĎALŠIE WEBY — pohyblivé karty, celá karta je odkaz
+         ============================================================ -->
+    <section id="webs">
+      <div class="container">
+        <p class="eyebrow" data-i18n="webs.eyebrow">more projects</p>
+        <h2 data-i18n="webs.title">My other<br>websites</h2>
+        <p class="section-lead" data-i18n="webs.lead">A few more sites I've designed and built — each with its own look, audience and purpose.</p>
+        <div class="web-grid">
+          <div class="web-float">
+            <a class="web-card" href="https://bohuslavar.github.io" target="_blank" rel="noopener">
+              <div class="web-card-img img-slot"><img src="https://res.cloudinary.com/livyisn3/image/upload/v1792401509/Sn%C3%ADmka_obrazovky_2026-10-19_o_11.17.52.png" alt=""></div>
+              <div class="web-card-body">
+                <h3 data-i18n="webs.cv">Online CV</h3>
+                <span class="web-card-link"><span data-i18n="webs.visit">Visit website</span> ↗</span>
+              </div>
+              <span class="web-card-shine" aria-hidden="true"></span>
+            </a>
+          </div>
+          <div class="web-float">
+            <a class="web-card" href="https://bohuslavar.github.io/Photography/" target="_blank" rel="noopener">
+              <div class="web-card-img img-slot"><img src="https://res.cloudinary.com/livyisn3/image/upload/v1792401508/Sn%C3%ADmka_obrazovky_2026-10-19_o_11.17.19.png" alt=""></div>
+              <div class="web-card-body">
+                <h3 data-i18n="webs.photo">Photography Portfolio</h3>
+                <span class="web-card-link"><span data-i18n="webs.visit">Visit website</span> ↗</span>
+              </div>
+              <span class="web-card-shine" aria-hidden="true"></span>
+            </a>
+          </div>
+          <div class="web-float">
+            <a class="web-card" href="https://bohuslavar.github.io/Grandhotel/" target="_blank" rel="noopener">
+              <div class="web-card-img img-slot"><img src="https://res.cloudinary.com/livyisn3/image/upload/v1792401510/Sn%C3%ADmka_obrazovky_2026-10-19_o_11.18.07.png" alt=""></div>
+              <div class="web-card-body">
+                <h3 data-i18n="webs.hotel">Grandhotel Concept</h3>
+                <span class="web-card-link"><span data-i18n="webs.visit">Visit website</span> ↗</span>
+              </div>
+              <span class="web-card-shine" aria-hidden="true"></span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <button class="scroll-cue" data-scroll-to="specimen" aria-label="Scroll to next section" data-i18n-attr="aria-label:a11y.scroll">
+        <span class="scroll-circle"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></span>
+        <span class="scroll-label" data-i18n="a11y.scrollLabel">scroll</span>
+      </button>
+    </section>
+
+    <!-- ============================================================
+         PÍSMO A FARBY
+         ============================================================ -->
+    <section id="specimen">
+      <div class="container">
+        <p class="eyebrow" data-i18n="spec.eyebrow">behind the design</p>
+        <h2 data-i18n="spec.title">Type &amp; Color System</h2>
+
+        <div class="specimen-block">
+          <p class="specimen-label" data-i18n="spec.typeLabel">Typeface — Montserrat (fallback: Roboto → Helvetica Neue → Arial)</p>
+          <p class="specimen-h1">Aa Bb Cc — ExtraBold 800 / H1</p>
+          <p class="specimen-h2">Aa Bb Cc — Bold 700 / H2</p>
+          <p class="specimen-h3">Aa Bb Cc — SemiBold 600 / H3</p>
+          <p class="specimen-body" data-i18n="spec.body">Aa Bb Cc — Regular 400 / body text, used for paragraphs across the site.</p>
+        </div>
+
+        <div class="specimen-block">
+          <p class="specimen-label" data-i18n="spec.palette">Palette — Gold</p>
+          <div class="swatch-grid">
+            <div class="swatch-card"><span class="swatch-color" style="background:#D9B061;"></span><span class="swatch-name"><span data-i18n="color.gold">Gold</span><br>#D9B061</span></div>
+            <div class="swatch-card"><span class="swatch-color" style="background:#D9C4A9;"></span><span class="swatch-name"><span data-i18n="color.sand">Sand</span><br>#D9C4A9</span></div>
+            <div class="swatch-card"><span class="swatch-color" style="background:#D8D0C5;"></span><span class="swatch-name"><span data-i18n="color.greige">Greige</span><br>#D8D0C5</span></div>
+            <div class="swatch-card"><span class="swatch-color" style="background:#8D6F57;"></span><span class="swatch-name"><span data-i18n="color.mocha">Mocha</span><br>#8D6F57</span></div>
+            <div class="swatch-card"><span class="swatch-color" style="background:#3F0D0C;"></span><span class="swatch-name"><span data-i18n="color.burgundy">Burgundy</span><br>#3F0D0C</span></div>
+            <div class="swatch-card"><span class="swatch-color" style="background:#F4EEE3;"></span><span class="swatch-name"><span data-i18n="color.ivoryGold">Ivory</span><br>#F4EEE3</span></div>
+            <div class="swatch-card"><span class="swatch-color" style="background:#EAD39C;"></span><span class="swatch-name"><span data-i18n="color.champagne">Champagne</span><br>#EAD39C</span></div>
+            <div class="swatch-card"><span class="swatch-color" style="background:#A8743A;"></span><span class="swatch-name"><span data-i18n="color.bronze">Bronze</span><br>#A8743A</span></div>
+          </div>
+        </div>
+      </div>
+      <button class="scroll-cue" data-scroll-to="contact" aria-label="Scroll to next section" data-i18n-attr="aria-label:a11y.scroll">
+        <span class="scroll-circle"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></span>
+        <span class="scroll-label" data-i18n="a11y.scrollLabel">scroll</span>
+      </button>
+    </section>
+
+    <!-- ============================================================
+         KONTAKT
+         ============================================================ -->
+    <section id="contact">
+      <div class="contact-grid">
+        <div class="contact-text">
+          <h2 data-i18n="contact.title">LET'S<br>CONNECT</h2>
+          <p data-i18n="contact.text">Have a project that needs some color, craft or a design across a new material? Let's talk.</p>
+          <div class="contact-info">
+            <div><strong data-i18n="contact.emailLabel">Email:</strong> <a href="mailto:b.rozsypalova@gmail.com">b.rozsypalova@gmail.com</a></div>
+            <div><strong data-i18n="contact.phoneLabel">Phone:</strong> <a href="tel:+421903633993">0903 633 993</a></div>
+            <div><strong data-i18n="contact.locationLabel">Location:</strong> <span data-i18n="contact.place">Košice / Bratislava, Slovakia</span></div>
+          </div>
+        </div>
+        <div class="contact-form-card">
+          <form id="contact-form" action="https://formsubmit.co/b.rozsypalova@gmail.com" method="POST">
+            <input type="hidden" name="_subject" value="New message from the graphic portfolio">
+            <input type="text" name="_honey" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <div>
+              <label for="name" data-i18n="form.name">Name</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            <div>
+              <label for="email" data-i18n="form.email">Email</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div>
+              <label for="message" data-i18n="form.message">Message</label>
+              <textarea id="message" name="message" required></textarea>
+            </div>
+            <button type="submit" class="send-btn" id="contact-submit" data-i18n="form.send">Send</button>
+            <p class="form-status" id="form-status" role="status"></p>
+            <p class="form-note" data-i18n="form.note">Your details will not be shared. Never send passwords.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
 
   <footer>© 2026 Bohuslava Rozsypalová</footer>
+
   <!-- ============================================================
-       LIGHTBOX 
+       LIGHTBOX — zväčšený obrázok z galérie
        ============================================================ -->
   <div class="lightbox" id="lightbox" aria-hidden="true">
-    <button class="lightbox-close" id="lightbox-close" aria-label="Close">&times;</button>
-    <button class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Previous image">‹</button>
-    <button class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Next image">›</button>
+    <button class="lightbox-close" id="lightbox-close" aria-label="Close" data-i18n-attr="aria-label:lb.close">&times;</button>
+    <button class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Previous image" data-i18n-attr="aria-label:lb.prev">‹</button>
+    <button class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Next image" data-i18n-attr="aria-label:lb.next">›</button>
     <img class="lightbox-img" id="lightbox-img" src="" alt="">
   </div>
 
